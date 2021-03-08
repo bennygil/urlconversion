@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using URLConversion.WebsiteScrape.Models;
 
 namespace URLConversion.WebsiteScrape.Services
 {
@@ -22,6 +23,11 @@ namespace URLConversion.WebsiteScrape.Services
             var location = $@"{savePath}{fileName}.txt";
             TextWriter textWriter = File.CreateText(location);
             htmlDocument.DocumentNode.WriteContentTo(textWriter);
+        }
+
+        public UrlConvertModel ExportConvertModel(HtmlDocument htmlDocument, string outputName)
+        {
+            return new UrlConvertModel() { HtmlString = htmlDocument.DocumentNode.InnerHtml, Name = outputName };
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using URLConversion.WebsiteScrape.Models;
 using URLConversion.WebsiteScrape.Services.Interfaces;
 
 namespace URLConversion.WebsiteScrape.Services
@@ -18,12 +19,12 @@ namespace URLConversion.WebsiteScrape.Services
         {
             this._urlReader = urlReader;
         }
-        public async Task Run(Uri uri)
+        public async Task<UrlConvertModel> Run(Uri uri)
         {
-            await GetHomePageContent(uri.AbsoluteUri);
+            return await GetHomePageContent(uri.AbsoluteUri);
         }
 
-        private async Task GetHomePageContent(string domainHomePageURL)
+        private async Task<UrlConvertModel> GetHomePageContent(string domainHomePageURL)
         {
             var web = new HtmlWeb();
             var doc = web.Load(domainHomePageURL);
@@ -31,7 +32,7 @@ namespace URLConversion.WebsiteScrape.Services
             var pattern = @"http?s:\/\/";
             var name = Regex.Match(domainHomePageURL, pattern);
             var fileName = domainHomePageURL.Replace('.', '_').Remove(0, name.Value.Length);
-            this.exportService.ExportToDisk(doc, fileName.Remove(fileName.Length - 1, 1));
+           return this.exportService.ExportConvertModel(doc, fileName.Remove(fileName.Length - 1, 1));
         }
     }
 }

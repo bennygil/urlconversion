@@ -5,6 +5,16 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLConversion.WebsiteScrape", "WebsiteScrape\URLConversion.WebsiteScrape.csproj", "{96D57C6E-F8D2-48F6-8195-7283078C1AAD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{D80837F9-5628-4DD0-B6DB-D0604BD7C56D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLConversion.Api", "URLConversion.Api\URLConversion.Api.csproj", "{7EB4E642-6275-48E9-A90D-8F8A3C58DC85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UrlService", "UrlService", "{F614EEF4-19DE-4F74-B63F-A6A1BB0CAEAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{F67F081B-7B6E-472C-B4EE-CFBF7F0A72A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{7D5B45C3-8DEF-4EC4-B158-DC61EEA95DA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +25,20 @@ Global
 		{96D57C6E-F8D2-48F6-8195-7283078C1AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96D57C6E-F8D2-48F6-8195-7283078C1AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96D57C6E-F8D2-48F6-8195-7283078C1AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB4E642-6275-48E9-A90D-8F8A3C58DC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB4E642-6275-48E9-A90D-8F8A3C58DC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB4E642-6275-48E9-A90D-8F8A3C58DC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB4E642-6275-48E9-A90D-8F8A3C58DC85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96D57C6E-F8D2-48F6-8195-7283078C1AAD} = {7D5B45C3-8DEF-4EC4-B158-DC61EEA95DA4}
+		{7EB4E642-6275-48E9-A90D-8F8A3C58DC85} = {F67F081B-7B6E-472C-B4EE-CFBF7F0A72A0}
+		{F614EEF4-19DE-4F74-B63F-A6A1BB0CAEAE} = {D80837F9-5628-4DD0-B6DB-D0604BD7C56D}
+		{F67F081B-7B6E-472C-B4EE-CFBF7F0A72A0} = {F614EEF4-19DE-4F74-B63F-A6A1BB0CAEAE}
+		{7D5B45C3-8DEF-4EC4-B158-DC61EEA95DA4} = {F614EEF4-19DE-4F74-B63F-A6A1BB0CAEAE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6CE48B26-B9F0-41B1-8DFD-9DF135AFCA02}
