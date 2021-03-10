@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace URLConversion.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("_clientOrigins")]
     public class ConversionController : Controller
     {
 
@@ -22,9 +24,9 @@ namespace URLConversion.Api.Controllers
 
         [HttpPost]
         [Route("ConvertUrl")]
-        public ActionResult<UrlConvertModel> Get([FromBody] string website)
+        public ActionResult<UrlConvertModel> Post([FromBody] InputModel website)
         {
-            return this._webpageScrape.Run(new Uri(website)).Result;
+            return this._webpageScrape.Run(new Uri(website.Website)).Result;
         }
     }
 }

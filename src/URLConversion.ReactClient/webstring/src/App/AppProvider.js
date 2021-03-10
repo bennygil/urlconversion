@@ -8,10 +8,10 @@ export class AppProvider extends React.Component {
         this.state = {
             page : 'home',
             websites: [],            
-            setPage: this.setPage
+            setPage: this.setPage,            
         }
     }
-    setPage = page => this.setState({page})
+    setPage = page => this.setState({page});    
     componentDidMount = ()=> {}
     
     render(){
